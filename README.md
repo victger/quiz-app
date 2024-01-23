@@ -1,36 +1,101 @@
-# Web full stack
-
-Le but de ce projet est de réaliser une application web proposant un quiz personnalisé. Nous effectuerons pour cela des développements front, des développements back, de la conception et de l’UX/UI Design.
-
-Notre projet se compose de deux parties : La "quiz-api" pour le backend et la "quiz-ui" pour le frontend.
-
-## Procédure de lancement
-
-Des images Docker ont été prévues pour exécuter ce projet.
-
-## Back-Office (quiz-api)
-
-Le backend de notre application fonctionne grâce à la stack Flask sur Python. Flask permet de créer des "routes" sur notre site, le rendant facilement navigable.
-
-Pour simplifier la compréhension du code, nous avons séparé les routes par thèmes, ainsi que les composantes nécessaires à l'exécution de notre code. Typiquement, les routes concernant les questions sont séparées des routes permettant d'accéder aux informations du quiz. La base de données et les modèles permettant l'insertion, l'accès et la modification de notre base de données sont aussi gérés dans des dossiers à part dans ce même but.
-
-La gestion de notre base de données repose sur le schéma suivant :
-
-![Alt text](https://quiz-esiee.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F919b8a92-40f3-4d1e-bdfd-efd7d80c126a%2FUntitled.png?table=block&id=caeaf17e-1c8f-4f8d-b689-ce25a00cc8d8&spaceId=83337b1a-cd84-4ed1-842a-89f35d3d47f1&width=2000&userId=&cache=v2)
-
-Des fonctions de conversion de données ont donc été créées à cet effet dans le fichier models.py.
-Par ailleurs, les opérations de modifiation des données sont effectuées dans le fichier db.py et appelées dans le dossier "routes" pour les endpoints concernés.
-
-La base de données est stockée dans le fichier "quiz.db".
-
-METTRE LE SCHEMA DE LA BASE DE DONNEES
-
-## Front-Office (quiz-ui)
-
-Le frontend de notre application fonctionne grâce aux stacks Vue, JavaScript, HTML, CSS.
-
-Toutes les interfaces de notre application ont été définies dans le dossier "views". Ces pages sont reliées entre elles grâce à un router qui a été défini dans "index.js".
-De plus, nous faisons appel à notre backend grâce au service "QuizApiService.js" et stockons des informations fondamentales dans "ParticipationStorageService.js". 
+# Cinemascope - Application de Quiz sur le Cinéma
 
 
-Ce projet a été réalisé par GHATGHUT Abdelraouf, Victor GERARD et Louis CHAUVIN.
+## Description
+
+Cinemascope est une application web destinée aux passionnés de cinéma. Elle offre un quiz interactif composé de 10 questions variées, permettant aux utilisateurs de tester leurs connaissances cinématographiques. L'application se divise en deux parties principales : une section administrative pour la gestion des questions et une section publique pour participer au quiz.
+
+## Fonctionnalités
+
+- **Quiz Cinéma :** Un quiz interactif composé de 10 questions pour les amateurs de cinéma.
+- **Gestion des Questions (Partie Admin) :** Permet la création, la mise à jour et la suppression des questions du quiz.
+- **Participation au Quiz (Partie Publique) :** Accès libre au quiz pour tous les utilisateurs.
+- **Interface Utilisateur Intuitive :** Une expérience utilisateur fluide et engageante.
+
+## Technologies Utilisées
+
+- **Backend :**
+  - Flask : Micro-framework web pour le développement d'applications avec Python.
+  - SQLite : Outil SQL et Mapping Objet-Relationnel (ORM) pour Python.
+
+- **Frontend :**
+  - Vue.js : Framework JavaScript progressif pour la construction d'interfaces utilisateur.
+
+  [![forthebadge](https://forthebadge.com/images/badges/uses-html.svg)](https://forthebadge.com)
+  [![forthebadge](https://forthebadge.com/images/badges/uses-css.svg)](https://forthebadge.com)
+
+
+  [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
+  [![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)](https://forthebadge.com)
+  
+- **Schéma de la base de donnée :**
+  ![image](https://github.com/victger/quiz-app/assets/132302057/3b77fb1c-027d-4adb-86ad-c0353f51bf10)
+
+## Configuration
+
+1. **Configuration du Backend :**
+   - Installez les dépendances : `pip install -r requirements.txt`
+   - Configurez la base de données : `python database.py`
+   - Lancez le serveur Flask : `flask run`
+
+2. **Configuration du Frontend :**
+   - Installez les dépendances : `npm install`
+   - Lancez le serveur de développement : `npm run dev`
+
+## Configuration Docker
+
+### Backend
+
+1. Accédez au répertoire du backend :
+    ```bash
+    cd quiz-api
+    ```
+
+2. Construisez l'image Docker :
+    ```bash
+    docker build -t nom-utilisateur/cinemascope-backend .
+    ```
+
+3. Exécutez le conteneur Docker :
+    ```bash
+    docker run -p 5000:5000 nom-utilisateur/cinemascope-backend
+    ```
+
+### Frontend
+
+1. Accédez au répertoire du frontend :
+    ```bash
+    cd quiz-ui
+    ```
+
+2. Construisez l'image Docker :
+    ```bash
+    docker build -t nom-utilisateur/cinemascope-frontend .
+    ```
+
+3. Exécutez le conteneur Docker :
+    ```bash
+    docker run -p 3000:80 nom-utilisateur/cinemascope-frontend
+    ```
+
+Adaptez `nom-utilisateur` et `cinemascope` selon vos préférences.
+
+## Accès à l'Application
+
+- Backend : [http://localhost:5000](http://localhost:5000)
+- Frontend : [http://localhost:8080](http://localhost:3000)
+
+## Utilisation
+
+- Accédez à l'application web à l'adresse `http://localhost:3000`.
+- Dans la partie publique, participez au quiz et testez vos connaissances en cinéma er consulter votre score.
+- Dans la partie admin, gérez les questions du quiz (ajout, modification, suppression de question).
+
+## Licence
+
+Ce projet est sous licence [MIT](LICENSE).
+
+### Projet réalisé par 
+- GHATGHUT Abdelraouf
+- Victor GERARD
+- Louis CHAUVIN
