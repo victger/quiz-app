@@ -1,4 +1,5 @@
 # Cinemascope - Application de Quiz sur le Cinéma
+![image](https://github.com/victger/quiz-app/assets/132302057/81b96bdb-1f29-4e80-9812-2eec4bb456a8)
 
 
 ## Description
