@@ -84,7 +84,7 @@ Adaptez `nom-utilisateur` et `cinemascope` selon vos préférences.
 ## Accès à l'Application
 
 - Backend : [http://localhost:5000](http://localhost:5000)
-- Frontend : [http://localhost:8080](http://localhost:3000)
+- Frontend : [http://localhost:3000](http://localhost:3000)
 
 ## Utilisation
 
