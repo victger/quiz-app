@@ -36,7 +36,7 @@ Cinemascope est une application web destinée aux passionnés de cinéma. Elle o
 
 1. **Configuration du Backend :**
    - Installez les dépendances : `pip install -r requirements.txt`
-   - Configurez la base de données : `python database.py`
+   - Configurez la base de données : `python db.py`
    - Lancez le serveur Flask : `flask run`
 
 2. **Configuration du Frontend :**
