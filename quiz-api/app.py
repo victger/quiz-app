@@ -14,8 +14,7 @@ CORS(app)
 
 @app.route('/')
 def hello_world():
-	x = 'hsdh'
-	return f"Hello, {x}"
+	return "Application was launched."
 
 @app.route('/quiz-info', methods=['GET'])
 def get_quiz_info():

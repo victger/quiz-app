@@ -1,0 +1,27 @@
+version: '3.8'
+services:
+  quiz-api:
+    build:
+      context: ./quiz-api
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./quiz-api:/app
+    environment:
+      FLASK_ENV: production
+    networks:
+      - quiz-network
+
+  quiz-ui:
+    build:
+      context: ./quiz-ui
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    networks:
+      - quiz-network
+
+networks:
+  quiz-network:
+    driver: bridge
